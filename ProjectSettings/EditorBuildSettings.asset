@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LoadGame.unity
     guid: 33d98c3ab05bfbe448ce51768837f707
   - enabled: 1
-    path: Assets/Scenes/Level.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
     path: Assets/Scenes/HomeScreen.unity
     guid: 4c18a890c9a781c4a8f434a42b7dd65d
+  - enabled: 1
+    path: Assets/Scenes/Level.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects: {}

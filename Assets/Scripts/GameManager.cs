@@ -33,16 +33,12 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (_i)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
         DontDestroyOnLoad(this);
         _i = this;
 
         aus = GetComponent<AudioSource>();
+        aus.Pause();
+
         SoundOn = PlayerPrefs.GetInt("SoundOn", 1) == 1;
 
         MusicVol = PlayerPrefs.GetFloat("MusicVol", 1);
@@ -53,8 +49,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-
         SceneTransition.ToggleImmediate(true);
+        SceneManager.LoadScene(HomeScreenScene);
         StartCoroutine(SceneTransition.Toggle(false));
     }
 

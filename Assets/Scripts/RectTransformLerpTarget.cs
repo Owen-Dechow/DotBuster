@@ -59,7 +59,7 @@ struct RectTransformLerpTarget
     {
         System.Func<float, float> curve = x => x < 0.5f ? 4 * x * x * x : 1 - Mathf.Pow(-2 * x + 2, 3) / 2;
 
-        for (float i = 0; i < seconds; i += Mathf.Min(Time.unscaledDeltaTime, 0.1f))
+        for (float i = 0; i < seconds; i += Mathf.Min(Time.unscaledDeltaTime, 0.01f))
         {
             float t = curve(i);
             yield return new WaitForEndOfFrame();

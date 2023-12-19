@@ -14,12 +14,6 @@ public class SceneTransition : MonoBehaviour
 
     private void Awake()
     {
-        if (_i)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
         _i = this;
         DontDestroyOnLoad(this);
         toggled = false;
@@ -66,12 +60,10 @@ public class SceneTransition : MonoBehaviour
     IEnumerator ToggleOff()
     {
         Color baseColor = mainPanel.color;
-        print(Time.time);
         yield return RectTransformLerpTarget.RunOnCurveOverSeconds(new System.Action<float>[] {
             (float t) => mainPanel.color = new Color(baseColor.r, baseColor.g, baseColor.b, 1 - t),
         }, 1);
 
-        print(Time.time);
         toggled = false;
         gameObject.SetActive(false);
     }
